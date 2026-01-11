@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conexão Sem Limites | Consultoria Internacional</title>
+    <link rel="icon" type="image/png" href="https://i.ibb.co/938th8hB/logo-novo.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      // Tailored Tailwind config for theme support
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              ireland: '#009a44',
+              portugal: '#e21b22',
+            }
+          }
+        }
+      }
+
+      // Initialize theme to avoid flash
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
+    <style>
+      body { font-family: 'Inter', sans-serif; transition: background-color 0.3s ease, color 0.3s ease; }
+      .fade-enter { opacity: 0; transition: opacity 500ms ease-in; }
+      .fade-enter-active { opacity: 1; }
+      .carousel-img { transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; }
+
+      /* Subtle Neon Accents - Light Mode Only */
+      :root:not(.dark) .neon-accent-green {
+        text-shadow: 0 0 10px rgba(16, 185, 129, 0.35);
+      }
+      :root:not(.dark) .neon-accent-blue {
+        text-shadow: 0 0 10px rgba(59, 130, 246, 0.35);
+      }
+      :root:not(.dark) .neon-glow-green:hover {
+        box-shadow: 0 0 15px rgba(16, 185, 129, 0.25);
+      }
+      :root:not(.dark) .neon-glow-blue:hover {
+        box-shadow: 0 0 15px rgba(59, 130, 246, 0.25);
+      }
+      :root:not(.dark) .neon-divider {
+        box-shadow: 0 0 12px rgba(16, 185, 129, 0.2);
+      }
+      :root:not(.dark) .neon-card:hover {
+        border-color: rgba(59, 130, 246, 0.3);
+        box-shadow: 0 10px 40px rgba(59, 130, 246, 0.08);
+      }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0"
+      }
+    }
+    </script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen">
+    <div id="root"></div>
+    <!-- Start of HubSpot Embed Code -->
+<script
+  type="text/javascript"
+  id="hs-script-loader"
+  async
+  defer
+  src="//js-na1.hs-scripts.com/50812232.js">
+</script>
+<!-- End of HubSpot Embed Code -->
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
